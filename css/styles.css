@@ -41,11 +41,6 @@ body {
     letter-spacing: 0.02em;
 }
 
-/* @media (min-width: 320px) {
-    body {
-        overflow-x: hidden;
-    }
-} */
 @media (min-width: 1200px) {
     body {
         font-weight: 400;
@@ -1118,6 +1113,16 @@ screen and (min-resolution: 2dppx) and (min-width: 768px) {
 .modal-send:focus {
     background-color: var(--color-bg-button);
 }
+/* PORTFOLIO */
+.portfolio {
+    display: flex;
+    gap: 48px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 48px 0;
+}
+
 .nav-portfolio {
     display: flex;
     justify-content: center;
@@ -1127,8 +1132,8 @@ screen and (min-resolution: 2dppx) and (min-width: 768px) {
 
 .nav-button {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
-
 }
 
 .filter-button {
@@ -1169,10 +1174,6 @@ screen and (min-resolution: 2dppx) and (min-width: 768px) {
     padding: 96px 0 120px 0;
 }
 
-.card {
-    flex-basis: calc((100% - 48px) / 3);
-}
-
 .link-portfolio {
     display: block;
     text-decoration: none;
@@ -1190,24 +1191,42 @@ screen and (min-resolution: 2dppx) and (min-width: 768px) {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.cards {
-    display: flex;
-    flex-direction: column;
+.cards-img {
+    width: 396px;
+    height: 280px;
 }
 
 .cards-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 24px;
     row-gap: 48px;
-    flex-basis: calc(100% / 3 - 48px);
     padding-left: 0;
     margin: 0;
 }
+@media screen and (min-width: 768px) {
+    .cards-img {
+        width: 356px;
+        height: 300px;
+    }
+    .cards-item {
+        justify-content: flex-start;
+        column-gap: 24px;
+        row-gap: 72px;
+    }
+}
 
+@media screen and (min-width: 1200px) {
+    .cards-img {
+        width: 360px;
+    }
+
+    .cards-item {
+        row-gap: 48px;
+    }
+}
 .cards-text {
-    width: 360px;
+    max-width: 396px;
     padding: 32px 0 32px 16px;
     border: solid #E7E9FC;
     border-width: 0 1px 1px 1px;
