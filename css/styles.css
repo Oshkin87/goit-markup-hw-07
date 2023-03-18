@@ -40,6 +40,12 @@ body {
     font-size: 16px;
     letter-spacing: 0.02em;
 }
+
+/* @media (min-width: 320px) {
+    body {
+        overflow-x: hidden;
+    }
+} */
 @media (min-width: 1200px) {
     body {
         font-weight: 400;
@@ -69,8 +75,7 @@ header {
 }
 
 .header-container {
-    display: grid;
-    height: 72px;
+    height: 70px;
     width: 100%;
 }
 /* LOGO */
@@ -83,6 +88,11 @@ header {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     text-decoration: none;
+
+}
+.logo-header {
+    padding-top: 24px;
+    padding-bottom: 22px;
 }
 
 .logo-dark {
@@ -104,7 +114,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 @media screen and (min-width: 768px) {
     .header-mobile {
@@ -133,9 +142,14 @@ header {
 }
 
 .burger {
+    cursor: pointer;
     width: 32px;
     height: 24px;
     stroke: var(--color-dark-bg);
+}
+.burger:hover,
+.burger:focus {
+    stroke: var(--color-bg-button);
 }
 
 .header-nav {
@@ -188,7 +202,7 @@ header {
     height: 4px;
     border-radius: 2px;
     background-color: currentColor;
-    bottom: 0;
+    bottom: -3px;
 }
 
 .nav-link:hover,
@@ -201,6 +215,10 @@ header {
     flex-direction: column;
     gap: 12px;
     flex-wrap: wrap;
+    font-weight: 400;
+    line-height: 1.16;
+    font-size: 12px;
+    letter-spacing: 0.04em;
 }
 
 .address-menu {
@@ -398,13 +416,55 @@ header {
     padding: 112px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-480.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
     max-width: 1440px;
     margin: 0 auto;
-    
 }
+
 @media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .hero-section {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-480@2x.jpg');
+    }
+}
+
+@media (min-width: 428px) {
+    .hero-section {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-768.jpg');
+    }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 428px),
+screen and (min-resolution: 190dpi) and (min-width: 428px),
+screen and (min-resolution: 2dppx) and (min-width: 428px) {
+    .hero-section {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-768@2x.jpg');
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-1200.jpg');
+    }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+screen and (min-resolution: 190dpi) and (min-width: 768px),
+screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .hero-section {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-1200@2x.jpg');
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-section {
+        padding: 188px 0;
+    }
+}
+
+/* @media (min-device-pixel-ratio: 2),
 (min-resolution: 192dpi),
 (min-resolution: 2dppx){
     .hero-section{
@@ -438,7 +498,7 @@ header {
     .hero-section {
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/people-office-1200@2x.jpg');
     }
-}
+} */
 
 .hero-wrapper {
     display: flex;
@@ -522,6 +582,7 @@ header {
 }
 
 .slogan-title {
+    text-align: center;
     color: var(--color-dark-bg);
     font-weight: 700;
     font-size: 36px;
@@ -539,6 +600,9 @@ header {
     }
     .features-item {
         width: calc(100% / 2 - 24px);
+    }
+    .slogan-title{
+        text-align: start;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -929,6 +993,7 @@ header {
     width: 100%;
     padding: 72px 16px 24px 16px;
     opacity: 1;
+    overflow: auto;
     background-color: #fcfcfc;
     box-shadow: 0px 1px 1px rgb(0 0 0 / 14%), 0px 1px 3px rgb(0 0 0 / 12%), 0px 2px 1px rgb(0 0 0 / 20%);
     border-radius: 4px;
